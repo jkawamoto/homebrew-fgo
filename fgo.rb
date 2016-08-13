@@ -1,14 +1,23 @@
+#
+# assets/formula.go
+#
+# Copyright (c) 2016 Junpei Kawamoto
+#
+# This software is released under the MIT License.
+#
+# http://opensource.org/licenses/mit-license.php
+#
 class Fgo < Formula
   desc "Build, upload, and create brew formula for golang application."
   homepage "https://github.com/jkawamoto/fgo"
-  version "0.2.2"
+  version "0.2.3"
 
-  if Hardware.is_64_bit?
-    url "https://github.com/jkawamoto/fgo/releases/download/v0.2.2/fgo_0.2.2_darwin_amd64.zip"
-    sha256 "756e2d9edbd8f1c81e30eb8fba3f08d8cbbc409da28914de77f63762575fde33"
+  if Hardware::CPU.is_64_bit?
+    url "https://github.com/jkawamoto/fgo/releases/download/v0.2.3/fgo_0.2.3_darwin_amd64.zip"
+    sha256 "00fd532eaca22d38db5eb7ed182291662d5dd2cd5cf60a03509b05d21423599f"
   else
-    url "https://github.com/jkawamoto/fgo/releases/download/v0.2.2/fgo_0.2.2_darwin_386.zip"
-    sha256 "088f6283421b1e8aa223f6d075721e020d95a5b22b9333c408ac216a3c4c8b59"
+    url "https://github.com/jkawamoto/fgo/releases/download/v0.2.3/fgo_0.2.3_darwin_386.zip"
+    sha256 "db864b32c22b97a2e0556bc55dec22080ecaa1789be9a138c4f84e734c5d12ef"
   end
 
   def install
