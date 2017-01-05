@@ -20,6 +20,7 @@ class Fgo < Formula
     sha256 "{{.Hash386}}"
   end
 
+  system "brew tap homebrew/dupes"
   system "brew tap tcnksm/ghr"
   depends_on "make" => :run
   depends_on "ghr" => :run
