@@ -10,14 +10,14 @@
 class Fgo < Formula
   desc "Build, upload, and create brew formula for golang application."
   homepage "https://github.com/jkawamoto/fgo"
-  version "0.2.4"
+  version "0.2.5"
 
   if Hardware::CPU.is_64_bit?
-    url "https://github.com/jkawamoto/fgo/releases/download/v0.2.4/fgo_0.2.4_darwin_amd64.zip"
-    sha256 "c3898b4e92071fd9b2f25c7b408f0a14ea6077e10db7e56e35db1f26a02dc41f"
+    url "https://github.com/jkawamoto/fgo/releases/download/v0.2.5/fgo_0.2.5_darwin_amd64.zip"
+    sha256 "e382aafdd9f3d2d05183cde74642594f51a9761a786cd10dccc2f516ec122c57"
   else
-    url "https://github.com/jkawamoto/fgo/releases/download/v0.2.4/fgo_0.2.4_darwin_386.zip"
-    sha256 "075a25d01fb84447c586034e129a02951dce077c7fe060075085980efbcc4544"
+    url "https://github.com/jkawamoto/fgo/releases/download/v0.2.5/fgo_0.2.5_darwin_386.zip"
+    sha256 "345f48a03830e1e5d96173017959b5c368248e2913c313f3028bafdec389949b"
   end
 
   system "brew tap tcnksm/ghr"
