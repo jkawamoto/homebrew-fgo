@@ -1,7 +1,7 @@
 #
 # assets/formula.rb
 #
-# Copyright (c) 2016 Junpei Kawamoto
+# Copyright (c) 2016-2017 Junpei Kawamoto
 #
 # This software is released under the MIT License.
 #
@@ -20,7 +20,6 @@ class Fgo < Formula
     sha256 "075a25d01fb84447c586034e129a02951dce077c7fe060075085980efbcc4544"
   end
 
-  system "brew tap homebrew/dupes"
   system "brew tap tcnksm/ghr"
   depends_on "make" => :run
   depends_on "ghr" => :run
