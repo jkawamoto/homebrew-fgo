@@ -1,5 +1,5 @@
 #
-# assets/formula.rb
+# fgo.rb
 #
 # Copyright (c) 2016-2017 Junpei Kawamoto
 #
@@ -7,17 +7,42 @@
 #
 # http://opensource.org/licenses/mit-license.php
 #
+require 'rbconfig'
 class Fgo < Formula
   desc "Build, upload, and create brew formula for golang application."
   homepage "https://github.com/jkawamoto/fgo"
-  version "0.2.5"
+  version "0.3.0"
 
   if Hardware::CPU.is_64_bit?
-    url "https://github.com/jkawamoto/fgo/releases/download/v0.2.5/fgo_0.2.5_darwin_amd64.zip"
-    sha256 "e382aafdd9f3d2d05183cde74642594f51a9761a786cd10dccc2f516ec122c57"
+    case RbConfig::CONFIG['host_os']
+    when /mswin|msys|mingw|cygwin|bccwin|wince|emc/
+      :windows
+    when /darwin|mac os/
+      url "https://github.com/jkawamoto/fgo/releases/download/v0.3.0/fgo_0.3.0_darwin_amd64.zip"
+      sha256 "01d7119de7acdce94eb13577624249dd92d9eff721026f0e0e953e77ac37ac42"
+    when /linux/
+      url "https://github.com/jkawamoto/fgo/releases/download/v0.3.0/fgo_0.3.0_linux_amd64.tar.gz"
+      sha256 "5d96c39950152b9b8af83b1eb6755b6ea0ae3ebfcd189292ae007ac3e29ff8a9"
+    when /solaris|bsd/
+      :unix
+    else
+      :unknown
+    end
   else
-    url "https://github.com/jkawamoto/fgo/releases/download/v0.2.5/fgo_0.2.5_darwin_386.zip"
-    sha256 "345f48a03830e1e5d96173017959b5c368248e2913c313f3028bafdec389949b"
+    case RbConfig::CONFIG['host_os']
+    when /mswin|msys|mingw|cygwin|bccwin|wince|emc/
+      :windows
+    when /darwin|mac os/
+      url "https://github.com/jkawamoto/fgo/releases/download/v0.3.0/fgo_0.3.0_darwin_386.zip"
+      sha256 "720fbc957d7992f24a633a1512053a9257b95639973bc5dcebb2a97704675203"
+    when /linux/
+      url "https://github.com/jkawamoto/fgo/releases/download/v0.3.0/fgo_0.3.0_linux_386.tar.gz"
+      sha256 "7559963023d6708c9366c6a8d7aa89445a6391946fb757ea60998b249120d43d"
+    when /solaris|bsd/
+      :unix
+    else
+      :unknown
+    end
   end
 
   system "brew tap tcnksm/ghr"
