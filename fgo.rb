@@ -11,18 +11,18 @@ require 'rbconfig'
 class Fgo < Formula
   desc "Build, upload, and create brew formula for golang application."
   homepage "https://github.com/jkawamoto/fgo"
-  version "v0.3.2"
+  version "0.3.3"
 
   if Hardware::CPU.is_64_bit?
     case RbConfig::CONFIG['host_os']
     when /mswin|msys|mingw|cygwin|bccwin|wince|emc/
       :windows
     when /darwin|mac os/
-      url "https://github.com/jkawamoto/fgo/releases/download/vv0.3.2/fgo_v0.3.2_darwin_amd64.zip"
-      sha256 "57b9ba097e800ab0e07521f83d31a33cf6b29db537e1e36508a5efdec645cedb"
+      url "https://github.com/jkawamoto/fgo/releases/download/v0.3.3/fgo_v0.3.3_darwin_amd64.zip"
+      sha256 "dcf91c2aa8e97176d91ae4a8dd39f2f9dde4c4004b3f646d94e4acc513287095"
     when /linux/
-      url "https://github.com/jkawamoto/fgo/releases/download/vv0.3.2/fgo_v0.3.2_linux_amd64.tar.gz"
-      sha256 "4c56ecd3eb9d5a009703f5ace67e9804bade937302abb69dee8437a5000b85c8"
+      url "https://github.com/jkawamoto/fgo/releases/download/v0.3.3/fgo_v0.3.3_linux_amd64.tar.gz"
+      sha256 "4366f65bebd44bf1d6baf106f8c20bfe2535ddea6c0e7f72a1bfc22fff51373c"
     when /solaris|bsd/
       :unix
     else
@@ -33,11 +33,11 @@ class Fgo < Formula
     when /mswin|msys|mingw|cygwin|bccwin|wince|emc/
       :windows
     when /darwin|mac os/
-      url "https://github.com/jkawamoto/fgo/releases/download/vv0.3.2/fgo_v0.3.2_darwin_386.zip"
-      sha256 "f9e1bf2f53071434b06c84668118df26f53df4c3500c7cdae4fe31060b542678"
+      url "https://github.com/jkawamoto/fgo/releases/download/v0.3.3/fgo_v0.3.3_darwin_386.zip"
+      sha256 "f0c32a4e9cb0678fa839a6fcb6a071aeb49a803734ef69cfeeefcc83660be586"
     when /linux/
-      url "https://github.com/jkawamoto/fgo/releases/download/vv0.3.2/fgo_v0.3.2_linux_386.tar.gz"
-      sha256 "a17906d685d0e0b386d51bfd2ecf778175e64fbdd7a88dd7e2c45a230bc535d6"
+      url "https://github.com/jkawamoto/fgo/releases/download/v0.3.3/fgo_v0.3.3_linux_386.tar.gz"
+      sha256 "dd511dc3d2f11c94fca1de28ad97f43cc243c98093971f427c15efdeda338c75"
     when /solaris|bsd/
       :unix
     else
