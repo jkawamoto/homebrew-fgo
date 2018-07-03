@@ -45,15 +45,7 @@ class Fgo < Formula
     end
   end
 
-  system "brew tap tcnksm/ghr"
-  depends_on "make" => :run
-  depends_on "ghr" => :run
-  depends_on 'go' => :build
-
-  GOPATH = ENV["GOPATH"]
   def install
-    ENV["GOPATH"] = GOPATH
-    system "go get -u github.com/laher/goxc"
     bin.install "fgo"
   end
 
